@@ -1,0 +1,51 @@
+# Dependencies
+node_modules/
+
+# Build outputs
+build/
+dist/
+.turbo/
+coverage/
+*.tsbuildinfo
+
+# Secrets
+.env
+.env.*
+!.env.example
+!.env.test
+
+# Temp files
+/tmp/
+/apps/*/tmp/*
+!/apps/*/tmp/.gitkeep
+
+# Logs
+*.log
+logs/
+
+# Editors
+.fleet/
+.idea/
+.vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json
+.zed/*
+!.zed/settings.json
+!.zed/extensions.json
+
+# Platform specific and files
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Frontend compiled assets
+**/public/assets/
+
+# Pruned Docker build context
+/out
+
+# AI agent worktrees
+.claude/worktrees/

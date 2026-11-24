@@ -1,0 +1,51 @@
+{
+	"name": "adonisjs-inertia-monorepo-starter-kit",
+	"version": "0.0.0",
+	"private": true,
+	"description": "A batteries-included AdonisJS starter kit for building modern single-page applications with React",
+	"license": "UNLICENSED",
+	"type": "module",
+	"scripts": {
+		"dev": "turbo dev",
+		"build": "turbo build",
+		"test": "turbo test",
+		"check": "turbo run lint lint:repo format:repo:check format:edge:check typecheck",
+		"check:fix": "pnpm format && pnpm lint:fix && pnpm check",
+		"lint": "turbo run lint lint:repo",
+		"lint:fix": "oxlint --fix",
+		"lint:repo": "oxlint",
+		"format": "turbo run format:repo format:edge",
+		"format:check": "turbo run format:repo:check format:edge:check",
+		"format:edge:check": "turbo run format:edge:check",
+		"format:edge": "turbo run format:edge",
+		"format:repo:check": "oxfmt --check",
+		"format:repo": "oxfmt",
+		"typecheck": "turbo typecheck",
+		"db:up": "docker compose up -d --wait",
+		"db:down": "docker compose down --remove-orphans",
+		"db:push": "turbo run db:push",
+		"db:seed": "turbo run db:seed",
+		"docker:build": "docker build -t website .",
+		"orb:run": "docker run --rm -it --name website --env-file ./apps/website/.env -e NODE_ENV=production -e HOST=0.0.0.0 -e APP_URL=https://website.orb.local -e DB_HOST=host.docker.internal website"
+	},
+	"devDependencies": {
+		"@adonisjs/eslint-plugin": "^2.2.2",
+		"oxfmt": "^0.79.0",
+		"oxlint": "^1.94.0",
+		"prettier": "^3.9.9",
+		"prettier-edge": "^1.0.0",
+		"tsrs": "7.1.0-beta.tsrs4",
+		"turbo": "^2.11.3"
+	},
+	"devEngines": {
+		"packageManager": {
+			"name": "pnpm",
+			"version": "12.21.0",
+			"onFail": "download"
+		}
+	},
+	"engines": {
+		"node": ">=24.0.0"
+	},
+	"packageManager": "pnpm@12.21.0"
+}
