@@ -1,0 +1,47 @@
+# Dependencies and outputs are recreated in Docker. The build uses .adonisjs as source.
+**/node_modules
+**/.turbo
+**/build
+**/dist
+**/public/assets
+**/coverage
+**/*.tsbuildinfo
+out
+
+# Local data and credentials
+**/tmp
+**/logs
+**/*.log
+**/.env
+**/.env.*
+**/.npmrc
+**/.netrc
+**/.ssh
+**/.aws
+**/*.pem
+**/*.key
+**/*.p12
+
+# Repository tooling and editor files
+**/.git
+.github
+.agents
+.claude
+.codex
+**/.fleet
+**/.idea
+**/.vscode
+**/.zed
+**/.DS_Store
+**/*.swp
+
+# Documentation and container configuration
+**/*.md
+**/LICENSE
+docs
+Dockerfile*
+.dockerignore
+compose*.yaml
+compose*.yml
+docker-compose*.yaml
+docker-compose*.yml

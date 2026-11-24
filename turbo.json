@@ -1,0 +1,71 @@
+{
+	"$schema": "https://turbo.build/schema.json",
+	"ui": "tui",
+	"tasks": {
+		"build": {
+			"description": "Compiles the AdonisJS server and bundles frontend assets for production",
+			"dependsOn": ["^build"],
+			"outputs": ["build/**"],
+			"env": ["NODE_ENV"],
+			"passThroughEnv": ["APP_KEY", "HOST", "PORT", "LOG_LEVEL"]
+		},
+		"dev": {
+			"description": "Starts the AdonisJS development server with hot module replacement",
+			"dependsOn": ["db:seed"],
+			"cache": false,
+			"persistent": true
+		},
+		"test": {
+			"description": "Runs the application's Japa test suite",
+			"dependsOn": ["build"],
+			"cache": false
+		},
+		"db:seed": {
+			"description": "Populates the database with application seed data",
+			"dependsOn": ["db:push"],
+			"cache": false
+		},
+		"db:push": {
+			"description": "Applies pending database migrations",
+			"dependsOn": ["//#db:up"],
+			"cache": false
+		},
+		"//#db:up": {
+			"description": "Starts local PostgreSQL with Docker Compose and waits for it to become healthy",
+			"cache": false
+		},
+		"//#lint:repo": {
+			"description": "Lints repository code with Oxlint",
+			"dependsOn": ["^build"]
+		},
+		"//#lint:fix": {
+			"description": "Applies Oxlint autofixes to repository code",
+			"dependsOn": ["^build"],
+			"cache": false
+		},
+		"lint": {
+			"description": "Lints the website workspace with ESLint",
+			"dependsOn": ["^build"]
+		},
+		"//#format:repo": {
+			"description": "Formats repository files with Oxfmt",
+			"cache": false
+		},
+		"//#format:repo:check": {
+			"description": "Checks repository formatting with Oxfmt"
+		},
+		"format:edge": {
+			"description": "Formats Edge templates with Prettier",
+			"cache": false
+		},
+		"format:edge:check": {
+			"description": "Checks Edge template formatting with Prettier"
+		},
+		"typecheck": {
+			"description": "Checks TypeScript types for the AdonisJS server and Inertia frontend",
+			"dependsOn": ["^build"],
+			"outputs": []
+		}
+	},
+	"agentGuidance": true
+}
