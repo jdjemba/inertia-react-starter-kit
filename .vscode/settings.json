@@ -1,0 +1,35 @@
+{
+	"debug.javascript.defaultRuntimeExecutable": {
+		"pwa-node": "/Users/junior/.local/share/mise/shims/node"
+	},
+	"explorer.fileNesting.enabled": true,
+	"explorer.fileNesting.patterns": {
+		".env": ".env.*",
+		"tsconfig.json": "tsconfig.*.json",
+		"package.json": "package-lock.json, pnpm*, .yarnrc*, yarn*, bun.lock, nub.lock",
+		"Dockerfile": "Dockerfile*, .dockerignore, compose*, docker-compose*"
+	},
+	"editor.codeActionsOnSave": {
+		"source.organizeImports": "never",
+		"source.fixAll.oxc": "explicit"
+	},
+	"editor.defaultFormatter": "oxc.oxc-vscode",
+	"editor.formatOnSave": true,
+	"editor.formatOnSaveMode": "file",
+	"files.readonlyInclude": { "**/.adonisjs/**": true },
+	"files.watcherExclude": { "**/.adonisjs/**": true },
+	"js/ts.tsdk.promptToUseWorkspaceVersion": true,
+	"js/ts.tsdk.path": "apps/website/node_modules/typescript-7/lib",
+	"npm.packageManager": "pnpm",
+	"oxc.path.node": "/Users/junior/.local/share/mise/shims/node",
+	"oxc.typeAware": true,
+	"search.exclude": { "**/.adonisjs/**": true },
+	"[edge]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
+	"[javascript]": { "editor.defaultFormatter": "oxc.oxc-vscode" },
+	"[javascriptreact]": { "editor.defaultFormatter": "oxc.oxc-vscode" },
+	"[typescript]": { "editor.defaultFormatter": "oxc.oxc-vscode" },
+	"[typescriptreact]": { "editor.defaultFormatter": "oxc.oxc-vscode" },
+	"[json]": { "editor.defaultFormatter": "oxc.oxc-vscode" },
+	"[jsonc]": { "editor.defaultFormatter": "oxc.oxc-vscode" },
+	"[yaml]": { "editor.defaultFormatter": "oxc.oxc-vscode" }
+}

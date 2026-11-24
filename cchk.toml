@@ -1,0 +1,13 @@
+[commit]
+# https://www.conventionalcommits.org
+conventional_commits = true
+subject_imperative = true
+ai_attribution = "forbid"
+ignore_authors = ["dependabot[bot]", "renovate[bot]"]
+
+[branch]
+# https://conventionalbranch.org
+conventional_branch = true
+allow_branch_types = ["feature", "bugfix", "hotfix", "chore", "dependabot", "renovate"]
+allow_branch_names = ["main"]
+ignore_authors = ["dependabot[bot]", "renovate[bot]"]
